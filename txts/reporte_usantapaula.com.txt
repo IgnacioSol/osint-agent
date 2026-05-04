@@ -1,0 +1,27 @@
+Reporte OSINT: usantapaula.com
+
+=== DNS ===
+A : 192.0.78.222
+A : 192.0.78.187
+NS : ns1.wordpress.com.
+NS : ns2.wordpress.com.
+NS : ns3.wordpress.com.
+TXT : v=spf1 include:_spf.wpcloud.com ~all
+SOA : ns1.wordpress.com. hostmaster.wordpress.com. 2005071858 14400 7200 604800 300
+=== HOSTS ===
+best.usantapaula.com,181.174.171.198
+intranet.usantapaula.com,143.244.190.120
+maestria.usantapaula.com,192.0.78.187
+matricula.usantapaula.com,181.174.171.195
+pruebamatricula.usantapaula.com,181.174.171.198
+pruebasisma.usantapaula.com,181.174.171.198
+sisma.usantapaula.com,181.174.171.197
+www.usantapaula.com,192.0.78.222
+
+=== GEOLOCALIZACIÓN ===
+IP: 192.0.78.187
+Country: United States
+State: California
+City: San Francisco
+Latitude: 37.7794
+Longitude: -122.4176

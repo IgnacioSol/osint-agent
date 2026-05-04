@@ -1,0 +1,75 @@
+Reporte OSINT: ucr.ac.cr
+
+=== DNS ===
+A : 163.178.83.117
+MX : 10 mx1.hc6010-39.iphmx.com.
+MX : 10 mx2.hc6010-39.iphmx.com.
+NS : ns2.ucr.ac.cr.
+NS : secundario.nic.cr.
+NS : ns1.ucr.ac.cr.
+TXT : uoms9vt0jevdsfvp6pnm1ikorb
+TXT : google-site-verification=gNAq0kPEtt0hvmmPr0GtmLEVZKsGUNWO2oe4E24XUpQ
+TXT : v=spf1 mx a:smtp.ucr.ac.cr ip4:163.178.163.168 include:esa.hc6010-39.iphmx.com -all
+TXT : MS=9501F0270FA4065EDBA2108FD8B2F546F98E6CDE
+TXT : cisco-ci-domain-verification=277d887c61cdd11a4e6d4458454aa1ee4a28062c549a73ee267d868ce52a708f
+SOA : ns1.ucr.ac.cr. hostmaster.ucr.ac.cr. 2026043001 10800 3600 2419200 300
+=== HOSTS ===
+ucr.ac.cr,163.178.83.117
+4911.ucr.ac.cr,163.178.16.133
+academiacicap.ucr.ac.cr,163.178.171.141
+acaducr.ucr.ac.cr,163.178.170.207
+accionescolectivas.ucr.ac.cr,163.178.170.138
+www.accionescolectivas.ucr.ac.cr,163.178.170.138
+accionsocial.ucr.ac.cr,163.178.114.206
+www.accionsocial.ucr.ac.cr,163.178.114.206
+activoslibres.ucr.ac.cr,163.178.108.223
+adminusuarios.ucr.ac.cr,163.178.83.18
+aeem.ucr.ac.cr,163.178.171.147
+agro.ucr.ac.cr,163.178.170.95
+agro-desarrollo.ucr.ac.cr,163.178.171.98
+www.agro.ucr.ac.cr,163.178.170.95
+agrocampus.ucr.ac.cr,163.178.118.2
+agroemprendes.ucr.ac.cr,163.178.170.172
+www.agroemprendes.ucr.ac.cr,163.178.170.172
+agronomia.ucr.ac.cr,163.178.170.207
+www.agronomia.ucr.ac.cr,163.178.170.207
+aguci.ucr.ac.cr,163.178.170.142
+alimentacionycultura.ucr.ac.cr,163.178.170.207
+analytics.ucr.ac.cr,163.178.170.179
+antivirus.ucr.ac.cr,163.178.170.100
+apissmn.ucr.ac.cr,163.178.170.206
+aplicacionesosg.ucr.ac.cr,167.86.46.11
+aplicacionesvive.ucr.ac.cr,163.178.170.24
+aplicarencuestaorh.ucr.ac.cr,163.178.170.206
+apoyandoteenlau.ucr.ac.cr,163.178.170.224
+www.apoyandoteenlau.ucr.ac.cr,163.178.170.224
+apuntes.ucr.ac.cr,163.178.170.142
+www.apuntes.ucr.ac.cr,163.178.170.142
+archivo.ucr.ac.cr,163.178.170.207
+www.archivo.ucr.ac.cr,163.178.170.207
+archivomusical.ucr.ac.cr,163.178.170.207
+www.archivomusical.ucr.ac.cr,163.178.170.207
+arcoslab.ucr.ac.cr,163.178.170.207
+arquis.ucr.ac.cr,163.178.170.194
+www.arquis.ucr.ac.cr,163.178.170.194
+artes.ucr.ac.cr,163.178.170.207
+artesdramaticas.ucr.ac.cr,163.178.171.21
+www.artesdramaticas.ucr.ac.cr,163.178.171.21
+artesmusicales.ucr.ac.cr,163.178.170.207
+www.artesmusicales.ucr.ac.cr,163.178.170.207
+artesplasticas.ucr.ac.cr,163.178.170.207
+www.artesplasticas.ucr.ac.cr,163.178.170.207
+artesplasticas4.ucr.ac.cr,163.178.170.207
+arvenses-eeafbm.ucr.ac.cr,163.178.170.207
+aulavirtualat.ucr.ac.cr,163.178.170.142
+www.aulavirtualat.ucr.ac.cr,163.178.170.142
+aurol.ucr.ac.cr,163.178.170.207
+avatai.ucr.ac.cr,163.178.116.10
+
+=== GEOLOCALIZACIÓN ===
+IP: 163.178.83.117
+Country: Costa Rica
+State: Provincia de San José
+City: San Pedro
+Latitude: 9.9309
+Longitude: -84.0526

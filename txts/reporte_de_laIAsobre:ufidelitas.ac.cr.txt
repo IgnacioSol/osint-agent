@@ -1,0 +1,81 @@
+informe de: ufidelitas.ac.cr
+
+# Análisis OSINT de ufidelitas.ac.cr
+
+## 1. INFRAESTRUCTURA
+
+### DNS y Servidores
+- **Nameservers**: AWS Route53 (awsdns-*.net/org/com/co.uk)
+- **IPs principales**: 3 direcciones IP diferentes (balanceo de carga)
+- **Email**: Microsoft 365/Office 365 (outlook.com protection)
+- **CDN**: CloudFront de AWS (cdn.ufidelitas.ac.cr - 13.32.241.14)
+
+### Subdominios identificados (30+)
+- Sistemas académicos: campus, estudiantes, biblioteca
+- Aplicaciones internas: aplicaciones, app, sistemas
+- Marketing: mercadeo, tracking, inglesconfide
+- Recursos humanos: capitalhumano
+- Desarrollo: campusdev, webtesting
+- Otros: jira-forms, sam, gestor, neotel
+
+### Servicios integrados
+- **Google** (múltiples verificaciones)
+- **Microsoft/Office 365** (correo)
+- **Amazon SES** (envío de emails)
+- **OpenAI** (verificación de dominio)
+- **Facebook** (verificación)
+- **Klaviyo** (marketing automation)
+- **Brevo** (email marketing)
+
+## 2. ALOJAMIENTO
+
+**Proveedor principal: Amazon Web Services (AWS)**
+
+- **Región principal**: US-EAST-1 (Virginia, Estados Unidos)
+- **Ciudad**: Ashburn, Virginia
+- **IPs**: Todas las direcciones resuelven a rangos de AWS
+- **Excepción**: biblioteca.ufidelitas.ac.cr, capitalhumano.ufidelitas.ac.cr, produsoft.ufidelitas.ac.cr (186.176.222.x) - posiblemente hosting local en Costa Rica
+
+## 3. ASPECTOS LLAMATIVOS Y SOSPECHOSOS
+
+### 🚨 **MUY SOSPECHOSO**
+
+**Registro TXT con credenciales expuestas:**
+```
+https://password.link/WUbsXzlv/#TnhzSlBBJEYjWikoQ3RwQUdT
+```
+- Este registro TXT contiene un enlace a "password.link" con lo que parece ser una contraseña codificada en Base64
+- **RIESGO CRÍTICO**: Nunca se deben exponer credenciales en registros DNS públicos
+- Requiere investigación inmediata
+
+### ⚠️ **Preocupante**
+
+1. **Múltiples tokens/hashes en registros TXT** sin contexto claro:
+   - `22p23i7ot2f1q8u5sjnn67o6f3`
+   - `32hcakbhtpnah5nateo78gurf0`
+   - `k1gb8tihfb36eq00ti291qj9pr`
+   - Aunque podrían ser tokens de verificación legítimos, su cantidad es inusual
+
+2. **Subdominios de desarrollo/testing expuestos:**
+   - campusdev.ufidelitas.ac.cr
+   - webtesting.ufidelitas.ac.cr
+   - Podrían contener vulnerabilidades o información sensible
+
+3. **Servidor antiguo visible:**
+   - old.ufidelitas.ac.cr (54.68.64.122) - ubicado en Oregon
+   - Potencial vector de ataque si no está actualizado
+
+4. **Infraestructura híbrida:**
+   - Mezcla de AWS y servidores locales (186.176.222.x)
+   - Aumenta superficie de ataque
+
+### ℹ️ **Observaciones normales**
+
+- Uso extensivo de AWS es apropiado para una institución educativa
+- Integración con servicios educativos y de productividad es esperada
+- SPF configurado correctamente para prevenir email spoofing
+
+## RECOMENDACIONES URGENTES
+
+1. **ELIMINAR INMEDIATAMENTE** el registro TXT con el enlace a password.link
+2. Revisar y limpiar tokens innecesarios en regist

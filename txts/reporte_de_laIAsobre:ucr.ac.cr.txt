@@ -1,0 +1,73 @@
+informe de: ucr.ac.cr
+
+# Análisis de Ciberseguridad - ucr.ac.cr
+
+## 1. INFRAESTRUCTURA
+
+### Servidor Principal
+- **IP primaria**: 163.178.83.117
+- **Rango de red**: 163.178.0.0/16 (red de clase B, aproximadamente 65,000 IPs disponibles)
+
+### DNS y Hosting de Correo
+- **Name Servers propios**: ns1.ucr.ac.cr y ns2.ucr.ac.cr (control interno)
+- **NS secundario**: secundario.nic.cr (respaldo nacional)
+- **Correo electrónico**: Tercerizado a **Barracuda Email Security** (mx1/mx2.hc6010-39.iphmx.com)
+
+### Servicios Verificados
+- Google Workspace (verificación de dominio)
+- Microsoft 365 (registro MS=...)
+- Cisco (autenticación de dominio)
+- SPF configurado para prevenir spoofing de email
+
+### Subdominios
+Más de 40 subdominios identificados, incluyendo servicios académicos, administrativos y de investigación.
+
+---
+
+## 2. UBICACIÓN DEL ALOJAMIENTO
+
+- **Ubicación física**: San Pedro, Provincia de San José, Costa Rica
+- **Tipo de hosting**: **Autopropietario** (on-premise)
+- **Evidencia**: 
+  - Rango IP 163.178.x.x asignado directamente a la UCR
+  - Name servers propios (ns1/ns2.ucr.ac.cr)
+  - Infraestructura distribuida en su propia red
+
+---
+
+## 3. HALLAZGOS LLAMATIVOS
+
+### ⚠️ **SOSPECHOSO**
+
+1. **IP fuera de rango corporativo**:
+   - `aplicacionesosg.ucr.ac.cr` → **167.86.46.11**
+   - Esta IP NO pertenece al rango 163.178.x.x de la UCR
+   - Aparenta ser de un proveedor cloud externo (posiblemente Vultr/DigitalOcean)
+   - **RIESGO**: Posible shadow IT, servicio no autorizado o infraestructura comprometida
+
+2. **Token expuesto en DNS TXT**:
+   - `uoms9vt0jevdsfvp6pnm1ikorb`
+   - Podría ser un token de verificación que debería eliminarse después de la validación
+
+### ✅ **POSITIVO**
+
+1. **Buenas prácticas de seguridad**:
+   - SPF configurado correctamente con política restrictiva (`-all`)
+   - Verificaciones de dominio para servicios legítimos
+   - Filtrado de correo por terceros (Barracuda) - buena práctica
+
+2. **Arquitectura robusta**:
+   - Múltiples name servers con respaldo
+   - Infraestructura propia bien organizada
+
+### ⚡ **RECOMENDACIONES**
+
+1. **Investigar urgentemente** `aplicacionesosg.ucr.ac.cr` (167.86.46.11)
+2. Limpiar registros TXT innecesarios
+3. Implementar DMARC y DKIM para complementar SPF
+4. Considerar DNSSEC para mayor seguridad DNS
+5. Auditar todos los subdominios para identificar servicios obsoletos
+
+---
+
+**Conclusión**: Infraestructura generalmente bien gestionada, pero con una **anomalía significativa** que requiere investigación inmediata.

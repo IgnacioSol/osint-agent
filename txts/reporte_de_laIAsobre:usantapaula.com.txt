@@ -1,0 +1,62 @@
+informe de: usantapaula.com
+
+# Análisis OSINT de usantapaula.com
+
+## 1. **Infraestructura**
+
+El dominio cuenta con una infraestructura **mixta y fragmentada**:
+
+- **Sitio principal**: Alojado en **WordPress.com** (managed hosting)
+  - DNS gestionados por WordPress (ns1/ns2/ns3.wordpress.com)
+  - IPs: 192.0.78.222 y 192.0.78.187
+  - Configuración SPF para correo electrónico delegada a WordPress Cloud
+
+- **Subdominios internos**: Alojados en infraestructura **diferente** (posiblemente on-premise o hosting local):
+  - `intranet.usantapaula.com` → 143.244.190.120
+  - `sisma.usantapaula.com` → 181.174.171.197
+  - `matricula.usantapaula.com` → 181.174.171.195
+  - `best.usantapaula.com`, `pruebamatricula.usantapaula.com`, `pruebasisma.usantapaula.com` → 181.174.171.198
+
+---
+
+## 2. **Ubicación del alojamiento**
+
+- **Dominio principal**: San Francisco, California, EE.UU. (WordPress.com / Automattic)
+- **Subdominios (IPs 181.174.171.x)**: El rango 181.x sugiere **América Latina** (probablemente Argentina según rangos típicos)
+- **Subdominio intranet (143.244.190.x)**: Probablemente también hosting cloud, requeriría verificación adicional
+
+---
+
+## 3. **Aspectos llamativos o sospechosos**
+
+### 🔴 **Hallazgos preocupantes:**
+
+1. **Exposición de sistemas internos**:
+   - `intranet.usantapaula.com` es **públicamente resoluble** → Las intranets NO deberían estar expuestas a Internet
+   - `sisma.usantapaula.com` (posible sistema de gestión académica) también expuesto
+
+2. **Subdominios de prueba en producción**:
+   - `pruebasisma.usantapaula.com`
+   - `pruebamatricula.usantapaula.com`
+   - Apuntan a la misma IP (181.174.171.198) que sistemas productivos → **Mala práctica de seguridad**
+
+3. **Infraestructura dividida**:
+   - Mezcla de hosting profesional (WordPress.com) con servidores propios/locales
+   - Diferentes niveles de seguridad y gestión
+   - Potenciales inconsistencias en protección
+
+4. **Falta de protección DNS moderna**:
+   - No se observan registros DMARC, DKIM
+   - Solo SPF básico (~all permite falsos positivos)
+
+### ⚠️ **Recomendaciones:**
+
+- **Urgente**: Restringir acceso a `intranet.usantapaula.com` (VPN/IP whitelisting)
+- Eliminar subdominios de prueba o moverlos a entornos no productivos
+- Implementar DMARC y DKIM para seguridad de correo
+- Consolidar infraestructura para mejor control de seguridad
+- Auditar qué servicios están realmente expuestos en los subdominios
+
+---
+
+**Conclusión**: Parece ser una institución educativa (por los nombres sisma/matrícula/maestría) con **problemas significativos de higiene en ciberseguridad**, especialmente la exposición de sistemas internos.

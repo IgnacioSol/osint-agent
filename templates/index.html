@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT Agent</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; background: #ffffff; color: #1d1d1f; min-height: 100vh; }
+        
+        header { padding: 60px 20px 40px; text-align: center; }
+        header h1 { font-size: 48px; font-weight: 700; letter-spacing: -1px; color: #1d1d1f; }
+        header p { font-size: 18px; color: #6e6e73; margin-top: 10px; font-weight: 400; }
+        
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+        
+        .search-box { margin-bottom: 48px; }
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid #d2d2d7;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            font-size: 17px;
+            outline: none;
+            transition: border 0.2s;
+            font-family: inherit;
+        }
+        .search-box input:focus { border-color: #1d1d1f; background: #fff; }
+        .search-box input::placeholder { color: #aeaeb2; }
+        .search-box button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 16px;
+            background: #1d1d1f;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-family: inherit;
+        }
+        .search-box button:hover { opacity: 0.8; }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #aeaeb2;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .card pre {
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 13px;
+            color: #1d1d1f;
+            white-space: pre-wrap;
+            word-break: break-all;
+            line-height: 1.7;
+        }
+
+        .ia-card {
+            background: #1d1d1f;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 16px;
+        }
+        .ia-card .section-label { color: #6e6e73; }
+        .ia-card p, .ia-card li, .ia-card h2, .ia-card h3 {
+            color: #f5f5f7;
+            line-height: 1.8;
+        }
+        .ia-card h2, .ia-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .ia-card p { font-size: 15px; margin-bottom: 10px; }
+        .ia-card ul, .ia-card ol {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        .ia-card li { font-size: 15px; margin-bottom: 4px; color: #f5f5f7; }
+        .ia-card strong { color: #ffffff; }
+
+        .error {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 24px;
+            color: #1d1d1f;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .divider { height: 1px; background: #d2d2d7; margin: 32px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OSINT Agent</h1>
+        <p>Analizá cualquier dominio con inteligencia artificial</p>
+    </header>
+
+    <div class="container">
+        <div class="search-box">
+            <form method="POST">
+                <input type="text" name="dominio" placeholder="google.com" value="{{ dominio or '' }}" required>
+                <button type="submit">Analizar</button>
+            </form>
+        </div>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if resultado %}
+        <div class="divider"></div>
+
+        <div class="card">
+            <div class="section-label">DNS</div>
+            <pre>{{ dns }}</pre>
+        </div>
+
+        <div class="card">
+            <div class="section-label">Subdominios</div>
+            <pre>{{ hosts }}</pre>
+        </div>
+
+        <div class="card">
+            <div class="section-label">Geolocalización</div>
+            <pre>{{ geo }}</pre>
+        </div>
+
+        <div class="ia-card">
+            <div class="section-label">Análisis IA</div>
+            {{ resultado | safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

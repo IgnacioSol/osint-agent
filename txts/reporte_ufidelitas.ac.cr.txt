@@ -1,0 +1,69 @@
+Reporte OSINT: ufidelitas.ac.cr
+
+=== DNS ===
+A : 3.225.186.105
+A : 100.51.55.17
+A : 23.23.186.112
+MX : 0 ufidelitas-ac-cr.mail.protection.outlook.com.
+NS : ns-1012.awsdns-62.net.
+NS : ns-1284.awsdns-32.org.
+NS : ns-431.awsdns-53.com.
+NS : ns-1664.awsdns-16.co.uk.
+TXT : MS=ms88748883
+TXT : 22p23i7ot2f1q8u5sjnn67o6f3
+TXT : google-site-verification=hQbaPQZsgp7AN9OvnemD3IuCLhLkxBArp_SGZvgQD9k
+TXT : google-site-verification=_enOABwLJqE5A67eH3bmon223DJ6JxRZkaNTlvTE600
+TXT : google-site-verification=pIRAhBRVk4QEaTSFyi4Oa7efAvuikXBsab9WQDuth4E
+TXT : 32hcakbhtpnah5nateo78gurf0
+TXT : dk168pjbouhsdp1ktcmgfobf2h
+TXT : openai-domain-verification=dv-QQHVn4fitOmYtyVVD4NPjDMG
+TXT : facebook-domain-verification=6n0oiojaxr1joj8ysb2rbkqbug4qsf
+TXT : https://password.link/WUbsXzlv/#TnhzSlBBJEYjWikoQ3RwQUdT
+TXT : k1gb8tihfb36eq00ti291qj9pr
+TXT : amazonses:lK0yqonk4WHP7U/obuDahyxcU19qbvKu4A5A7QcLm5A=
+TXT : klaviyo-site-verification=THS5SQ
+TXT : brevo-code:41fb32417ad30b8fd6b7661215e1c878
+TXT : v=spf1 ip4:52.1.68.116 ip4:52.1.255.42 include:_spf.qp-mail.com include:spf.protection.outlook.com include:email-messaging.com ~all
+SOA : ns-431.awsdns-53.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+=== HOSTS ===
+ufidelitas.ac.cr,3.225.186.105
+aplicaciones.ufidelitas.ac.cr,52.201.138.64
+www.aplicaciones.ufidelitas.ac.cr,52.201.138.64
+app.ufidelitas.ac.cr,54.85.225.111
+assets.ufidelitas.ac.cr,18.238.49.31
+biblioteca.ufidelitas.ac.cr,186.176.222.108
+caminoalafide.ufidelitas.ac.cr,3.213.215.145
+campus.ufidelitas.ac.cr,34.230.98.53
+campusdev.ufidelitas.ac.cr,184.73.11.142
+capitalhumano.ufidelitas.ac.cr,186.176.222.106
+cdn.ufidelitas.ac.cr,13.32.241.14
+dmsaccesscontrolservice.ufidelitas.ac.cr,3.234.192.115
+dmsformsmanagementservice.ufidelitas.ac.cr,98.80.42.44
+estudiantes.ufidelitas.ac.cr,52.44.207.42
+forecasts-project.ufidelitas.ac.cr,34.239.72.242
+gestor.ufidelitas.ac.cr,98.80.42.44
+inglesconfide.ufidelitas.ac.cr,3.213.215.145
+jira-forms.ufidelitas.ac.cr,52.44.207.42
+mercadeo.ufidelitas.ac.cr,52.202.168.58
+neotel.ufidelitas.ac.cr,34.73.76.156
+nugets.ufidelitas.ac.cr,52.5.111.16
+old.ufidelitas.ac.cr,54.68.64.122
+produsoft.ufidelitas.ac.cr,186.176.222.109
+revistas.ufidelitas.ac.cr,54.174.176.139
+sam.ufidelitas.ac.cr,52.1.63.76
+sam-tec.ufidelitas.ac.cr,34.207.47.167
+sistemas.ufidelitas.ac.cr,34.239.72.242
+testvocacional.ufidelitas.ac.cr,52.44.207.42
+tracking.ufidelitas.ac.cr,18.198.163.56
+webassets.ufidelitas.ac.cr,52.44.207.42
+webserver.ufidelitas.ac.cr,3.212.51.81
+webtesting.ufidelitas.ac.cr,18.233.187.195
+www.ufidelitas.ac.cr,3.212.121.255
+
+=== GEOLOCALIZACIÓN ===
+IP: 23.23.186.112
+Country: United States
+State: Virginia
+City: Ashburn
+Latitude: 39.0469
+Longitude: -77.4903
